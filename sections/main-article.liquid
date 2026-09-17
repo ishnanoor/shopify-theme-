@@ -1,0 +1,66 @@
+<!-- Breadcrumb -->
+<div class="site-wrapper">
+  <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li><a href="{{ blog.url }}">{{ blog.title | default: 'The Lumora Journal' }}</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li class="breadcrumbs-current" aria-current="page">{{ article.title | default: 'The Art of Mindful Dressing' }}</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Article Reader Container -->
+<article class="site-wrapper article-container">
+  <!-- Article Header -->
+  <header class="article-header">
+    <span class="blog-tag" style="margin-bottom: 16px;">Editorial</span>
+    <h1 class="article-title">{{ article.title | default: 'The Art of Mindful Dressing: Building a Timeless Capsule Wardrobe for Spring' }}</h1>
+    
+    <div class="article-author-strip">
+      <img src="{{ 'cat-women.jpg' | asset_url }}" alt="Author" class="article-author-img">
+      <div>
+        <strong>Words by {{ article.author | default: 'Clara Delacroix' }}</strong> &middot; Published {{ article.published_at | date: "%B %d, %Y" | default: 'March 14, 2026' }}
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Feature Image -->
+  <div class="article-lead-image">
+    {% if article.image %}
+      <img src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.title | escape }}">
+    {% else %}
+      <img src="{{ 'spring-sale.jpg' | asset_url }}" alt="Featured Story">
+    {% endif %}
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body-content">
+    {% if article.content != blank %}
+      {{ article.content }}
+    {% else %}
+      <p>Every morning, before we speak our first sentence or open our first email, we make an intimate aesthetic decision: how we choose to clothe our bodies. For too many, the modern walk-in closet has become a source of subtle cognitive anxiety—jammed with dozens of synthetic, trend-chasing garments bought on impulse yet rarely worn.</p>
+      <p>Mindful dressing is not about deprivation. It is an intentional curation that strips away the visual static until only pieces of genuine tactile beauty, superior craftsmanship, and functional versatility remain.</p>
+      <blockquote>"True luxury is not abundance; luxury is the quiet clarity of owning only what you genuinely love and wear with reverence."</blockquote>
+      <h2 style="font-size: 2.2rem; margin: 36px 0 16px;">1. The Supremacy of Natural Fibers</h2>
+      <p>A capsule wardrobe succeeds or fails based on materiality. Pure European flax linen breathes with your body’s temperature, shedding heat in the noon sun and insulating softly as evening drafts arrive.</p>
+      <div class="shoppable-inline-card">
+        <img src="{{ 'linen-shirt.jpg' | asset_url }}" alt="Relaxed Linen Shirt" class="shoppable-thumb">
+        <div class="shoppable-info">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 700;">Featured Essential</span>
+          <h4>Relaxed Linen Shirt in Olive Sage</h4>
+          <p>$49.00 &middot; Spun from 100% French Flax</p>
+        </div>
+        <a href="/products/linen-shirt" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem; text-decoration: none;">View Item</a>
+      </div>
+    {% endif %}
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article Content",
+  "settings": []
+}
+{% endschema %}

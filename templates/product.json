@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "recommendations": {
+      "type": "featured-products",
+      "settings": {
+        "title": "You May Also Adore",
+        "view_all_text": "Explore All",
+        "products_to_show": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

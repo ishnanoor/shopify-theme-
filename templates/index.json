@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "subtitle": "NEW SEASON COLLECTION",
+        "title": "Live Beautifully.<br>Shop Effortlessly.",
+        "description": "Curated styles, quality you love, delivered to your door.",
+        "button_text": "Shop Now"
+      }
+    },
+    "categories": {
+      "type": "featured-categories",
+      "settings": {
+        "title": "Shop by Category",
+        "link_text": "Browse all"
+      }
+    },
+    "deal": {
+      "type": "deal-of-the-day",
+      "settings": {
+        "tag": "LIMITED TIME OFFER",
+        "title": "Spring Sale is Live!",
+        "description": "Enjoy up to 40% off on selected collections.",
+        "discount_badge": "40%",
+        "button_text": "Explore Deals"
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "New Arrivals",
+        "view_all_text": "View all",
+        "products_to_show": 5
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Join the Lumora Circle",
+        "description": "Be the first to know about new arrivals, exclusive offers, and style inspiration.",
+        "button_text": "Subscribe"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "deal",
+    "products",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,31 @@
+<!-- Slide-Out Cart Drawer -->
+<div class="cart-drawer-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-drawer-header">
+    <h3>{{ 'general.cart.title' | t }}</h3>
+    <button class="cart-close-btn" id="cart-close-btn" aria-label="{{ 'general.accessibility.close' | t }}">✕</button>
+  </div>
+
+  <!-- Free Shipping Progress Tracker -->
+  <div class="cart-shipping-meter">
+    <div class="shipping-meter-text" id="cart-shipping-notice">✨ {{ 'general.cart.shipping_notice' | t }}</div>
+    <div class="shipping-progress-bar">
+      <div class="shipping-progress-fill" id="cart-shipping-fill"></div>
+    </div>
+  </div>
+
+  <!-- Cart Items Scrollable List -->
+  <div class="cart-items-container" id="cart-items-container">
+    <!-- Injected dynamically by main.js or Shopify Cart API -->
+  </div>
+
+  <!-- Cart Footer with Subtotal & Checkout -->
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal-row">
+      <span class="subtotal-label">{{ 'general.cart.subtotal' | t }}</span>
+      <span class="subtotal-value" id="cart-subtotal-price">{{ cart.total_price | money }}</span>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 14px; text-align: center;">{{ 'general.cart.taxes_included_shipping_at_checkout' | t }}</p>
+    <a href="/checkout" class="btn-primary checkout-btn" style="text-align: center; text-decoration: none; display: block;">{{ 'general.cart.checkout' | t }}</a>
+  </div>
+</div>

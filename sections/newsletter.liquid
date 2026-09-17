@@ -1,0 +1,53 @@
+<!-- Join the Lumora Circle Newsletter Banner -->
+<section class="site-wrapper">
+  <div class="newsletter-circle-banner">
+    <div class="newsletter-left">
+      <div class="newsletter-icon-box">
+        <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <div class="newsletter-text">
+        <h3>{{ section.settings.title | default: 'Join the Lumora Circle' }}</h3>
+        <p>{{ section.settings.description | default: 'Be the first to know about new arrivals, exclusive offers, and style inspiration.' }}</p>
+      </div>
+    </div>
+
+    {% form 'customer', class: 'newsletter-form', id: 'home-newsletter-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="email" name="contact[email]" placeholder="Enter your email" required class="newsletter-input" aria-label="Your email address">
+      <button type="submit" class="newsletter-submit">{{ section.settings.button_text | default: 'Subscribe' }}</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Join the Lumora Circle"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Be the first to know about new arrivals, exclusive offers, and style inspiration."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

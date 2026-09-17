@@ -1,0 +1,203 @@
+<!-- Breadcrumbs -->
+<div class="site-wrapper">
+  <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li><a href="{{ routes.all_products_collection_url }}">Catalog</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li class="breadcrumbs-current" aria-current="page">{{ product.title | default: 'Luxe Structured Handbag' }}</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Main Product Detail Section -->
+<section class="site-wrapper product-page-section">
+  <div class="product-detail-grid">
+    
+    <!-- Left: Product Image Gallery -->
+    <div class="product-gallery">
+      <div class="gallery-main-view" id="gallery-main-container">
+        <span class="gallery-badge">Bestseller</span>
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" id="gallery-main-image">
+        {% else %}
+          <img src="{{ 'luxe-handbag.jpg' | asset_url }}" alt="Luxe Structured Handbag Front View" id="gallery-main-image">
+        {% endif %}
+      </div>
+
+      <div class="gallery-thumbs">
+        {% if product.images.size > 1 %}
+          {% for image in product.images %}
+            <div class="gallery-thumb-item {% if forloop.first %}active{% endif %}" data-img="{{ image | image_url: width: 1000 }}">
+              <img src="{{ image | image_url: width: 200 }}" alt="{{ image.alt | default: product.title | escape }}">
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="gallery-thumb-item active" data-img="{{ 'luxe-handbag.jpg' | asset_url }}">
+            <img src="{{ 'luxe-handbag.jpg' | asset_url }}" alt="Front Studio View">
+          </div>
+          <div class="gallery-thumb-item" data-img="{{ 'spring-sale.jpg' | asset_url }}">
+            <img src="{{ 'spring-sale.jpg' | asset_url }}" alt="Flat Lay Styling">
+          </div>
+          <div class="gallery-thumb-item" data-img="{{ 'cat-accessories.jpg' | asset_url }}">
+            <img src="{{ 'cat-accessories.jpg' | asset_url }}" alt="Gold Hardware Detail">
+          </div>
+          <div class="gallery-thumb-item" data-img="{{ 'hero-model.jpg' | asset_url }}">
+            <img src="{{ 'hero-model.jpg' | asset_url }}" alt="On Model Lifestyle View">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Right: Product Information & Purchase Controls -->
+    <div class="product-details-content">
+      <div class="product-summary-meta">
+        <div class="product-stars-row">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <strong style="color: var(--color-text-title); margin-left: 4px;">4.9</strong>
+        </div>
+        <a href="#reviews" class="product-review-link">(128 {{ 'products.product.reviews' | t }})</a>
+        <span style="color: var(--color-border);">|</span>
+        <span style="font-size: 0.82rem; color: #3B7258; font-weight: 600;">{{ 'products.product.in_stock' | t }}</span>
+      </div>
+
+      <h1 class="product-title-large">{{ product.title | default: 'Luxe Structured Leather Handbag' }}</h1>
+
+      <div class="product-price-section">
+        <span class="product-current-price">{{ product.price | default: 12900 | money }}</span>
+        {% if product.compare_at_price > product.price %}
+          <span class="product-original-price">{{ product.compare_at_price | money }}</span>
+        {% else %}
+          <span class="product-original-price">$169.00</span>
+        {% endif %}
+        <span class="product-discount-pill">Save 24% OFF</span>
+      </div>
+
+      <div style="background-color: var(--color-card-subtle); padding: 10px 16px; border-radius: var(--radius-sm); font-size: 0.84rem; color: var(--color-text-body); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <span>Or 4 interest-free payments of <strong>$32.25</strong> with Klarna or Afterpay.</span>
+      </div>
+
+      <p class="product-short-desc">
+        {% if product.description != blank %}
+          {{ product.description | truncatewords: 40 }}
+        {% else %}
+          Handcrafted with architectural precision in Florence, Italy. Made from buttery Italian full-grain calfskin leather with hand-painted beveled edges, polished 18k gold-tone lock hardware, and an adjustable, detachable shoulder strap for day-to-night versatility.
+        {% endif %}
+      </p>
+
+      {% form 'product', product, id: 'product-form-main' %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: 1 }}">
+        
+        <!-- Color Swatches -->
+        <div class="product-option-block">
+          <div class="option-label-row">
+            <span class="option-name">Colorway:</span>
+            <span class="option-selected-val" id="selected-color-name">Oat Beige</span>
+          </div>
+          <div class="color-option-swatches">
+            <button type="button" class="color-swatch-btn active" data-name="Oat Beige" aria-label="Oat Beige">
+              <span style="background-color: #D6C6B2;"></span>
+            </button>
+            <button type="button" class="color-swatch-btn" data-name="Olive Sage" aria-label="Olive Sage">
+              <span style="background-color: #637564;"></span>
+            </button>
+            <button type="button" class="color-swatch-btn" data-name="Dusty Rose" aria-label="Dusty Rose">
+              <span style="background-color: #D99C94;"></span>
+            </button>
+            <button type="button" class="color-swatch-btn" data-name="Noir Black" aria-label="Noir Black">
+              <span style="background-color: #1E2320;"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Size Options -->
+        <div class="product-option-block">
+          <div class="option-label-row">
+            <span class="option-name">Size / Silhouette:</span>
+            <a href="#dimensions" style="font-size: 0.8rem; color: var(--color-primary); text-decoration: underline;">Size Guide</a>
+          </div>
+          <div class="size-options">
+            <button type="button" class="size-pill-btn">Petit (8.0")</button>
+            <button type="button" class="size-pill-btn active">Classic Medium (9.5")</button>
+            <button type="button" class="size-pill-btn">Grand Tote (12.5")</button>
+          </div>
+        </div>
+
+        <!-- Quantity & Add to Cart -->
+        <div class="product-purchase-box">
+          <div class="product-qty-selector">
+            <button type="button" id="qty-minus-btn" aria-label="Decrease quantity">−</button>
+            <input type="text" name="quantity" id="product-qty-input" value="1" readonly aria-label="Quantity">
+            <button type="button" id="qty-plus-btn" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="submit" class="btn-primary btn-add-bag" id="product-main-add-bag">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span>{{ 'products.product.add_to_cart' | t }} — {{ product.price | default: 12900 | money }}</span>
+          </button>
+          <button type="button" class="btn-wishlist-large wishlist-toggle active" data-id="{{ product.id | default: 'luxe-handbag' }}" aria-label="Add to Wishlist">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+        </div>
+      {% endform %}
+
+      <div class="urgency-stock-notice">
+        <span class="urgency-dot"></span>
+        <span>Only 3 pieces remaining in Florentine atelier batch — order ships tomorrow</span>
+      </div>
+
+      <!-- Product Accordions -->
+      <div class="product-accordions-group">
+        <div class="product-accordion-item accordion-item active">
+          <button class="accordion-header">
+            <span>Atelier Craftsmanship & Materials</span>
+            <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="accordion-body">
+            <p>Every piece is molded and edge-stitched by multi-generational artisans. We select only certified sustainable materials that develop a rich, lustrous patina over time.</p>
+          </div>
+        </div>
+
+        <div class="product-accordion-item accordion-item" id="dimensions">
+          <button class="accordion-header">
+            <span>Dimensions & Sizing</span>
+            <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Width:</strong> 9.5 in (24 cm)<br><strong>Height:</strong> 7.2 in (18 cm)<br><strong>Depth:</strong> 3.8 in (10 cm)</p>
+          </div>
+        </div>
+
+        <div class="product-accordion-item accordion-item">
+          <button class="accordion-header">
+            <span>Complimentary Shipping & 30-Day Returns</span>
+            <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="accordion-body">
+            <p>We provide worldwide climate-neutral express shipping on all orders over $50. If you are not completely delighted with your order, return within 30 days for a full refund.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Information",
+  "settings": []
+}
+{% endschema %}

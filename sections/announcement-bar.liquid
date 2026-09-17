@@ -1,0 +1,33 @@
+{% if section.settings.text != blank %}
+<div class="announcement-bar">
+  <span>{{ section.settings.text }}</span>
+  {% if section.settings.link_text != blank %}
+    <a href="{{ section.settings.link_url | default: routes.all_products_collection_url }}">{{ section.settings.link_text }}</a>
+  {% endif %}
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "Complimentary express delivery on all orders over $50"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Shop Spring Essentials"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ]
+}
+{% endschema %}

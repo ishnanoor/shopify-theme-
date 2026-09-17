@@ -1,0 +1,214 @@
+<!-- New Arrivals / Featured Products Section -->
+<section class="site-wrapper new-arrivals-section" id="new-arrivals">
+  <div class="section-head">
+    <h2>{{ section.settings.title | default: 'New Arrivals' }}</h2>
+    <a href="{{ section.settings.collection.url | default: routes.all_products_collection_url }}" class="view-all-link">
+      <span>{{ section.settings.view_all_text | default: 'View all' }}</span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="products-grid-5">
+    {% if section.settings.collection != blank and section.settings.collection.products.size > 0 %}
+      {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
+        <div class="product-card">
+          <div class="product-thumb-wrap">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}">
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag }}
+              {% endif %}
+            </a>
+            <button class="card-wishlist-btn wishlist-toggle" data-id="{{ product.id }}" aria-label="Add to wishlist">
+              <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </button>
+            <button class="product-quick-add add-to-cart-btn" data-id="{{ product.id }}">Quick Add +</button>
+          </div>
+          <div class="product-meta">
+            <a href="{{ product.url }}" class="product-title">{{ product.title }}</a>
+            <div class="product-price-row">
+              <span class="product-price">{{ product.price | money }}</span>
+              {% if product.compare_at_price > product.price %}
+                <span class="product-old-price" style="text-decoration: line-through; color: var(--color-text-muted); font-size: 0.85rem; margin-left: 6px;">{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <!-- 1. Linen Shirt -->
+      <div class="product-card">
+        <div class="product-thumb-wrap">
+          <a href="/products/linen-shirt">
+            <img src="{{ 'linen-shirt.jpg' | asset_url }}" alt="Relaxed Linen Shirt">
+          </a>
+          <button class="card-wishlist-btn wishlist-toggle" data-id="linen-shirt" aria-label="Add to wishlist">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+          <button class="product-quick-add add-to-cart-btn" data-id="linen-shirt">Quick Add +</button>
+        </div>
+        <div class="product-meta">
+          <a href="/products/linen-shirt" class="product-title">Linen Shirt</a>
+          <div class="product-price-row">
+            <span class="product-price">$49.00</span>
+            <div class="color-swatches">
+              <span class="swatch-dot" style="background-color: #637564;"></span>
+              <span class="swatch-dot" style="background-color: #E6E1D8;"></span>
+              <span class="swatch-dot" style="background-color: #384650;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Minimal Sneakers -->
+      <div class="product-card">
+        <div class="product-thumb-wrap">
+          <a href="/products/minimal-sneakers">
+            <img src="{{ 'sneakers.jpg' | asset_url }}" alt="Minimal Sneakers">
+          </a>
+          <button class="card-wishlist-btn wishlist-toggle" data-id="minimal-sneakers" aria-label="Add to wishlist">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+          <button class="product-quick-add add-to-cart-btn" data-id="minimal-sneakers">Quick Add +</button>
+        </div>
+        <div class="product-meta">
+          <a href="/products/minimal-sneakers" class="product-title">Minimal Sneakers</a>
+          <div class="product-price-row">
+            <span class="product-price">$79.00</span>
+            <div class="color-swatches">
+              <span class="swatch-dot" style="background-color: #FFFFFF;"></span>
+              <span class="swatch-dot" style="background-color: #E2DBD0;"></span>
+              <span class="swatch-dot" style="background-color: #2B2B2B;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Scented Candle -->
+      <div class="product-card">
+        <div class="product-thumb-wrap">
+          <a href="/products/scented-candle">
+            <img src="{{ 'candle.jpg' | asset_url }}" alt="Scented Candle">
+          </a>
+          <button class="card-wishlist-btn wishlist-toggle" data-id="scented-candle" aria-label="Add to wishlist">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+          <button class="product-quick-add add-to-cart-btn" data-id="scented-candle">Quick Add +</button>
+        </div>
+        <div class="product-meta">
+          <a href="/products/scented-candle" class="product-title">Scented Candle</a>
+          <div class="product-price-row">
+            <span class="product-price">$26.00</span>
+            <div class="color-swatches">
+              <span class="swatch-dot" style="background-color: #F8F5EE;"></span>
+              <span class="swatch-dot" style="background-color: #D6C29E;"></span>
+              <span class="swatch-dot" style="background-color: #4A4036;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Straw Hat -->
+      <div class="product-card">
+        <div class="product-thumb-wrap">
+          <a href="/products/straw-hat">
+            <img src="{{ 'straw-hat.jpg' | asset_url }}" alt="Straw Hat">
+          </a>
+          <button class="card-wishlist-btn wishlist-toggle" data-id="straw-hat" aria-label="Add to wishlist">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+          <button class="product-quick-add add-to-cart-btn" data-id="straw-hat">Quick Add +</button>
+        </div>
+        <div class="product-meta">
+          <a href="/products/straw-hat" class="product-title">Straw Hat</a>
+          <div class="product-price-row">
+            <span class="product-price">$35.00</span>
+            <div class="color-swatches">
+              <span class="swatch-dot" style="background-color: #D8C3A5;"></span>
+              <span class="swatch-dot" style="background-color: #222222;"></span>
+              <span class="swatch-dot" style="background-color: #E8D3B9;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Gold Hoops -->
+      <div class="product-card">
+        <div class="product-thumb-wrap">
+          <a href="/products/gold-hoops">
+            <img src="{{ 'gold-hoops.jpg' | asset_url }}" alt="Gold Hoops">
+          </a>
+          <button class="card-wishlist-btn wishlist-toggle" data-id="gold-hoops" aria-label="Add to wishlist">
+            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </button>
+          <button class="product-quick-add add-to-cart-btn" data-id="gold-hoops">Quick Add +</button>
+        </div>
+        <div class="product-meta">
+          <a href="/products/gold-hoops" class="product-title">Gold Hoops</a>
+          <div class="product-price-row">
+            <span class="product-price">$19.00</span>
+            <div class="color-swatches">
+              <span class="swatch-dot" style="background-color: #E8BF5C;"></span>
+              <span class="swatch-dot" style="background-color: #D8D8D8;"></span>
+              <span class="swatch-dot" style="background-color: #E29F84;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All Text",
+      "default": "View all"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 5,
+      "label": "Products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

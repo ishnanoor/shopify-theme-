@@ -1,0 +1,49 @@
+{
+  "general": {
+    "search": {
+      "search": "Search",
+      "placeholder": "Search curated collections, products, materials...",
+      "trending": "Trending Searches"
+    },
+    "cart": {
+      "title": "Your Shopping Bag",
+      "subtotal": "Subtotal",
+      "shipping_notice": "Complimentary Express Shipping Unlocked",
+      "checkout": "Proceed to Checkout",
+      "empty": "Your bag is currently empty.",
+      "taxes_included_shipping_at_checkout": "Taxes and shipping calculated at checkout."
+    },
+    "accessibility": {
+      "close": "Close",
+      "skip_to_text": "Skip to content"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Complimentary express delivery on all orders over $50",
+      "announcement_link": "Shop Spring Essentials"
+    },
+    "featured_products": {
+      "title": "New Arrivals",
+      "view_all": "View all",
+      "quick_add": "Quick Add +"
+    },
+    "categories": {
+      "title": "Shop by Category",
+      "browse_all": "Browse all"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "buy_it_now": "Buy with Shop Pay",
+      "in_stock": "In Stock & Ready to Ship",
+      "save": "Save",
+      "off": "OFF",
+      "reviews": "verified reviews",
+      "quantity": "Quantity",
+      "select_color": "Select Palette",
+      "select_size": "Select Dimension"
+    }
+  }
+}

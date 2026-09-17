@@ -1,0 +1,122 @@
+<!-- About Hero -->
+<section class="site-wrapper about-hero">
+  <span class="about-hero-tag">{{ section.settings.tag | default: 'THE LUMORA PHILOSOPHY' }}</span>
+  <h1 class="about-hero-title">{{ section.settings.title | default: 'Curating a life of quiet beauty, conscious craft, and calm elegance.' }}</h1>
+  <p class="about-hero-lead">{{ section.settings.lead | default: 'We believe that what surrounds you shapes how you feel. Lumora was founded to replace fast-fashion noise with enduring materials, ethical craftsmanship, and effortless warmth.' }}</p>
+</section>
+
+<!-- Editorial Story Block 1 -->
+<section class="site-wrapper">
+  <div class="about-editorial-block">
+    <div class="about-arch-img">
+      <img src="{{ 'hero-model.jpg' | asset_url }}" alt="Lumora Aesthetic Model in Nature">
+    </div>
+    <div class="about-text-content">
+      <span style="color: var(--color-blush); font-weight: 700; letter-spacing: 0.12em; font-size: 0.8rem; text-transform: uppercase;">HOW WE BEGAN</span>
+      <h2>A Return to Intentional Living</h2>
+      <p>In a world overloaded with fleeting trends and synthetic excess, Lumora began with a simple question: What if everything in your wardrobe and home was crafted with pure natural fibers, built to last a lifetime, and priced transparently?</p>
+      <p>We spent two years searching for historic European mills and family-owned ateliers who share our reverence for slow manufacturing. Today, every piece in the Lumora edit is a tribute to human touch, organic earth-tones, and everyday functionality.</p>
+      <div style="margin-top: 24px;">
+        <a href="{{ routes.all_products_collection_url }}" class="btn-primary">Explore The Core Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Pillars of LUMORA -->
+<section class="site-wrapper" id="sustainability">
+  <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+    <span style="color: var(--color-text-muted); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;">UNCOMPROMISING PRINCIPLES</span>
+    <h2 style="font-size: 2.8rem; margin-top: 8px;">The Four Pillars of Lumora</h2>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+      </div>
+      <h3>100% Pure Sourcing</h3>
+      <p>From French flax linen to Italian vegetable-tanned leathers and recycled 18k gold vermeil, we exclusively use biodegradable and natural materials.</p>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h3>Master Artisan Heritage</h3>
+      <p>We work exclusively with certified independent ateliers in Florence, Porto, and Kyoto where craft traditions have been safeguarded across generations.</p>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <h3>Radical Transparency</h3>
+      <p>We share our exact sourcing costs, workshop locations, and environmental audits with zero hidden markups or misleading buzzwords.</p>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+        </svg>
+      </div>
+      <h3>Circular Longevity</h3>
+      <p>Every bag and accessory comes with a lifetime repair promise and 100% recyclable, plastic-free FSC-certified unboxing packaging.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Counter Strip -->
+<div class="site-wrapper">
+  <div class="stats-counter-strip">
+    <div>
+      <div class="stat-item-number">100%</div>
+      <div class="stat-item-label">Certified Organic & Natural Fibers</div>
+    </div>
+    <div>
+      <div class="stat-item-number">50k+</div>
+      <div class="stat-item-label">Conscious Customers Worldwide</div>
+    </div>
+    <div>
+      <div class="stat-item-number">0%</div>
+      <div class="stat-item-label">Single-Use Plastics In Packaging</div>
+    </div>
+    <div>
+      <div class="stat-item-number">100%</div>
+      <div class="stat-item-label">Carbon Offset Courier Deliveries</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About Atelier",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag",
+      "default": "THE LUMORA PHILOSOPHY"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Curating a life of quiet beauty, conscious craft, and calm elegance."
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead Text",
+      "default": "We believe that what surrounds you shapes how you feel. Lumora was founded to replace fast-fashion noise with enduring materials, ethical craftsmanship, and effortless warmth."
+    }
+  ]
+}
+{% endschema %}

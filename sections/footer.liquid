@@ -1,0 +1,146 @@
+<!-- Footer Trust Bar -->
+<div class="site-wrapper">
+  <div class="footer-trust-bar">
+    <!-- Quality You Can Trust -->
+    <div class="trust-col">
+      <svg class="trust-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="trust-col-title">Quality You Can Trust</div>
+        <div class="trust-col-desc">Premium products handpicked for you.</div>
+      </div>
+    </div>
+
+    <!-- Customer Support -->
+    <div class="trust-col">
+      <svg class="trust-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+      </svg>
+      <div>
+        <div class="trust-col-title">Customer Support</div>
+        <div class="trust-col-desc">We're here to help, 24/7.</div>
+      </div>
+    </div>
+
+    <!-- Loved by Thousands -->
+    <div class="trust-col">
+      <svg class="trust-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+      </svg>
+      <div>
+        <div class="trust-col-title">Loved by Thousands</div>
+        <div class="trust-col-desc">Join our happy customer community.</div>
+      </div>
+    </div>
+
+    <!-- Sustainable Choice -->
+    <div class="trust-col">
+      <svg class="trust-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="12" cy="12" r="10" stroke-width="1.8"/>
+        <line x1="2" y1="12" x2="22" y2="12" stroke-width="1.8"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-width="1.8"/>
+      </svg>
+      <div>
+        <div class="trust-col-title">Sustainable Choice</div>
+        <div class="trust-col-desc">Thoughtful shopping for a better tomorrow.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Footer -->
+<footer class="site-footer">
+  <div class="site-wrapper">
+    <div class="footer-grid">
+      <!-- Brand Bio -->
+      <div class="footer-brand">
+        <a href="{{ routes.root_url }}" class="brand-logo">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C12.5 5.5 14 7 17.5 7.5C14 8 12.5 9.5 12 13C11.5 9.5 10 8 6.5 7.5C10 7 11.5 5.5 12 2Z" />
+            <circle cx="12" cy="12" r="2.2" />
+          </svg>
+          <span class="brand-name">{{ shop.name | default: 'LUMORA' }}</span>
+        </a>
+        <p>{{ section.settings.bio | default: 'Curating timeless elegance, natural textiles, and conscious living essentials designed to inspire your everyday rhythm.' }}</p>
+        <div class="footer-social-links">
+          {% if settings.social_instagram_link != blank %}
+            <a href="{{ settings.social_instagram_link }}" class="social-icon-circle" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          {% endif %}
+          {% if settings.social_pinterest_link != blank %}
+            <a href="{{ settings.social_pinterest_link }}" class="social-icon-circle" aria-label="Pinterest" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.357-.053.224-.177.271-.409.164-1.528-.711-2.483-2.943-2.483-4.736 0-3.856 2.802-7.397 8.077-7.397 4.241 0 7.537 3.023 7.537 7.063 0 4.215-2.657 7.607-6.345 7.607-1.239 0-2.404-.644-2.803-1.407l-.762 2.906c-.276 1.056-1.024 2.38-1.526 3.195 1.144.354 2.359.546 3.619.546 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+          {% endif %}
+          {% if settings.social_tiktok_link != blank %}
+            <a href="{{ settings.social_tiktok_link }}" class="social-icon-circle" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.67 1.42-.14 2.57-1.24 2.79-2.65.12-.76.12-1.53.12-2.3V.02z"/></svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Shop Links -->
+      <div class="footer-column">
+        <h4>Collections</h4>
+        <ul class="footer-links">
+          <li><a href="{{ routes.all_products_collection_url }}">Women's Apparel</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}">Men's Wardrobe</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}">Leather Goods</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}">Home Sanctuary</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}">Fine Jewelry</a></li>
+        </ul>
+      </div>
+
+      <!-- Experience & Story -->
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="/pages/about">Our Atelier Story</a></li>
+          <li><a href="/pages/about#sustainability">Sustainable Sourcing</a></li>
+          <li><a href="/blogs/news">The Lumora Journal</a></li>
+          <li><a href="/pages/contact">Press & Careers</a></li>
+          <li><a href="/pages/faq">Help & FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Concierge Care -->
+      <div class="footer-column">
+        <h4>Customer Care</h4>
+        <ul class="footer-links">
+          <li><a href="/pages/contact">VIP Concierge Desk</a></li>
+          <li><a href="/pages/faq">Complimentary Shipping</a></li>
+          <li><a href="/pages/faq">Returns & Exchanges</a></li>
+          <li><a href="/pages/contact">Store Appointments</a></li>
+          <li><a href="/pages/faq">Product Care Guide</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <span>&copy; {{ 'now' | date: "%Y" }} {{ shop.name | default: 'LUMORA' }} Inc. Crafted with quiet luxury & conscious craft.</span>
+      <div class="footer-bottom-links">
+        <a href="/pages/faq">Privacy Policy</a>
+        <a href="/pages/faq">Terms of Service</a>
+        <a href="/pages/faq">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "bio",
+      "label": "Brand Bio",
+      "default": "Curating timeless elegance, natural textiles, and conscious living essentials designed to inspire your everyday rhythm."
+    }
+  ]
+}
+{% endschema %}

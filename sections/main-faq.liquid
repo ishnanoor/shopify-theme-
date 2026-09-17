@@ -1,0 +1,117 @@
+<!-- Breadcrumb -->
+<div class="site-wrapper">
+  <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li class="breadcrumbs-current" aria-current="page">Help & FAQs</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- FAQ Hero & Search -->
+<section class="site-wrapper faq-hero-section">
+  <span style="color: var(--color-text-muted); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;">CLIENT CONCIERGE HELP</span>
+  <h1 style="font-size: 3.5rem; margin-top: 10px;">How May We Assist You?</h1>
+  <p style="color: var(--color-text-body); max-width: 500px; margin: 12px auto 0;">Find swift answers regarding orders, global deliveries, custom sizing, and garment care.</p>
+
+  <div class="faq-search-box">
+    <svg class="faq-search-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <input type="text" id="faq-search" class="faq-search-input" placeholder="Search questions: returns, leather care, delivery times...">
+  </div>
+
+  <!-- Filter Pills -->
+  <div class="faq-category-pills">
+    <button class="faq-pill active" data-category="all">All Topics</button>
+    <button class="faq-pill" data-category="shipping">Shipping & Orders</button>
+    <button class="faq-pill" data-category="returns">Returns & Exchanges</button>
+    <button class="faq-pill" data-category="sustainability">Sustainability</button>
+    <button class="faq-pill" data-category="care">Care & Materials</button>
+  </div>
+</section>
+
+<!-- FAQ Accordions Container -->
+<section class="site-wrapper">
+  <div class="faq-list-container" id="faq-accordions">
+    <div class="faq-accordion-card active" data-category="shipping">
+      <button class="faq-question-btn">
+        <span>What are your delivery times and shipping costs?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>We provide complimentary express delivery on all orders over $50. Standard orders typically arrive within 2–4 business days via carbon-neutral courier. Expedited next-day courier delivery is available during checkout for $15.</p>
+      </div>
+    </div>
+
+    <div class="faq-accordion-card" data-category="returns">
+      <button class="faq-question-btn">
+        <span>What is your 30-day return & exchange policy?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>We offer 30-day hassle-free returns on all unworn, unaltered items in their original packaging with dust bags intact. You can generate a complimentary prepaid return shipping label directly from your account or by contacting our Concierge desk.</p>
+      </div>
+    </div>
+
+    <div class="faq-accordion-card" data-category="sustainability">
+      <button class="faq-question-btn">
+        <span>Are Lumora materials certified sustainable?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>Yes. Every fiber in our catalog is OEKO-TEX® certified European flax linen, GOTS certified organic cotton, or vegetable-tanned leather from certified Italian tanneries. We use zero polyester, zero acrylic, and 100% plastic-free packaging.</p>
+      </div>
+    </div>
+
+    <div class="faq-accordion-card" data-category="care">
+      <button class="faq-question-btn">
+        <span>How do I properly care for my leather bags and accessories?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>Store your leather goods in the complimentary cotton dust bag provided. Avoid prolonged direct exposure to intense sunlight and moisture. Treat with a certified organic beeswax balm once every 6 months to preserve suppleness and natural luster.</p>
+      </div>
+    </div>
+
+    <div class="faq-accordion-card" data-category="shipping">
+      <button class="faq-question-btn">
+        <span>Can I track my order in real-time?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>Yes. As soon as your order is packed with care in our atelier, you will receive an SMS and email containing a private courier tracking link and delivery window estimates.</p>
+      </div>
+    </div>
+
+    <div class="faq-accordion-card" data-category="care">
+      <button class="faq-question-btn">
+        <span>How do I wash and iron pure linen shirts and garments?</span>
+        <svg class="accordion-icon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-answer-pane">
+        <p>Machine wash on a gentle or wool cycle in lukewarm water with a mild plant-based detergent. Lay flat or hang in the shade to dry naturally. Iron slightly damp on the reverse side to preserve crisp softness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Page",
+  "settings": []
+}
+{% endschema %}

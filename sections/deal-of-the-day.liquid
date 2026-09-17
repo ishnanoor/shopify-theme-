@@ -1,0 +1,79 @@
+<!-- Promotional Deal / Spring Sale Banner -->
+<section class="site-wrapper" id="deals">
+  <div class="spring-sale-banner">
+    <div class="sale-banner-content">
+      <div class="sale-tag-pill">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+        <span>{{ section.settings.tag | default: 'LIMITED TIME OFFER' }}</span>
+      </div>
+      <h2 class="sale-title">{{ section.settings.title | default: 'Spring Sale is Live!' }}</h2>
+      <p class="sale-desc">{{ section.settings.description | default: 'Enjoy up to 40% off on selected collections.' }}</p>
+      <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn-blush" id="sale-explore-deals-btn">
+        <span>{{ section.settings.button_text | default: 'Explore Deals' }}</span>
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="sale-banner-media">
+      <!-- Overlapping Circular Badge -->
+      <div class="sale-discount-badge">
+        <span class="badge-sub">UP TO</span>
+        <span class="badge-percent">{{ section.settings.discount_badge | default: '40%' }}</span>
+        <span class="badge-off">OFF</span>
+      </div>
+      <img src="{{ 'spring-sale.jpg' | asset_url }}" alt="Spring Sale Flat Lay with Olive Bag, Sunglasses, and Gold Watch">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Promotional Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Badge Tag",
+      "default": "LIMITED TIME OFFER"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Spring Sale is Live!"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Enjoy up to 40% off on selected collections."
+    },
+    {
+      "type": "text",
+      "id": "discount_badge",
+      "label": "Discount Percentage",
+      "default": "40%"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Explore Deals"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional Banner"
+    }
+  ]
+}
+{% endschema %}

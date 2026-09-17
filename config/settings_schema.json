@@ -1,0 +1,62 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "LUMORA",
+    "theme_version": "1.0.0",
+    "theme_author": "Ishna Noor",
+    "theme_documentation_url": "https://github.com/ishnanoor/shopify-theme-",
+    "theme_support_url": "https://github.com/ishnanoor/shopify-theme-"
+  },
+  {
+    "name": "Brand Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Pine / Forest",
+        "default": "#2D4030"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Blush / Terracotta",
+        "default": "#C28574"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Linen Background",
+        "default": "#FAF8F5"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Body Text",
+        "default": "#2C302E"
+      }
+    ]
+  },
+  {
+    "name": "Social Media Links",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest URL",
+        "default": "https://pinterest.com"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok URL",
+        "default": "https://tiktok.com"
+      }
+    ]
+  }
+]

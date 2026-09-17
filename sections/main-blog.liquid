@@ -1,0 +1,100 @@
+<!-- Breadcrumb -->
+<div class="site-wrapper">
+  <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li class="breadcrumbs-separator">/</li>
+      <li class="breadcrumbs-current" aria-current="page">{{ blog.title | default: 'The Lumora Journal' }}</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Editorial Header -->
+<section class="site-wrapper" style="text-align: center; padding: 20px 0 36px;">
+  <span style="color: var(--color-text-muted); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;">EDITORIAL & ESSAYS</span>
+  <h1 style="font-size: 3.8rem; margin: 8px 0 12px;">{{ blog.title | default: 'The Lumora Journal' }}</h1>
+  <p style="color: var(--color-text-body); max-width: 550px; margin: 0 auto; font-size: 1.05rem;">Dispatches on slow living, artisan textile preservation, and quiet wardrobe curation.</p>
+</section>
+
+<!-- Blog Articles Grid -->
+<section class="site-wrapper" style="padding-bottom: 70px;">
+  {% paginate blog.articles by 9 %}
+    <div class="blog-grid-3">
+      {% if blog.articles.size > 0 %}
+        {% for article in blog.articles %}
+          <article class="blog-card">
+            <div class="blog-card-thumb">
+              <a href="{{ article.url }}">
+                {% if article.image %}
+                  <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.title | escape }}">
+                {% else %}
+                  <img src="{{ 'hero-model.jpg' | asset_url }}" alt="{{ article.title | escape }}">
+                {% endif %}
+              </a>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span>{{ article.published_at | date: "%B %d, %Y" }}</span>
+                {% if article.author %}
+                  <span>·</span>
+                  <span>{{ article.author }}</span>
+                {% endif %}
+              </div>
+              <h3 class="blog-card-title"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+              <p class="blog-card-excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 25 }}</p>
+              <a href="{{ article.url }}" class="view-all-link" style="margin-top: auto; font-size: 0.85rem;">Read Story &rarr;</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <!-- Fallback Stories -->
+        <article class="blog-card">
+          <div class="blog-card-thumb">
+            <a href="/blogs/news"><img src="{{ 'hero-model.jpg' | asset_url }}" alt="Capsule Wardrobe"></a>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>March 14, 2026</span><span>·</span><span>6 min read</span></div>
+            <h3 class="blog-card-title"><a href="/blogs/news">The Art of Mindful Dressing: Building a Timeless Capsule Wardrobe</a></h3>
+            <p class="blog-card-excerpt">A tactical masterclass in color harmony, natural fibers, and investing in pieces that soften gracefully with age.</p>
+            <a href="/blogs/news" class="view-all-link" style="margin-top: auto; font-size: 0.85rem;">Read Story &rarr;</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-thumb">
+            <a href="/blogs/news"><img src="{{ 'linen-shirt.jpg' | asset_url }}" alt="Slow Linen"></a>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>February 28, 2026</span><span>·</span><span>4 min read</span></div>
+            <h3 class="blog-card-title"><a href="/blogs/news">From Normandy Flax Fields to Florentine Atelier: The Slow Linen Journey</a></h3>
+            <p class="blog-card-excerpt">Trace the zero-irrigation, zero-waste lifecycle of nature's most breathable and durable summer fiber.</p>
+            <a href="/blogs/news" class="view-all-link" style="margin-top: auto; font-size: 0.85rem;">Read Story &rarr;</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-thumb">
+            <a href="/blogs/news"><img src="{{ 'candle.jpg' | asset_url }}" alt="Sanctuary Home"></a>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>February 15, 2026</span><span>·</span><span>5 min read</span></div>
+            <h3 class="blog-card-title"><a href="/blogs/news">Sanctuary at Home: The Olfactory Architecture of Wild Amber & Cedar</a></h3>
+            <p class="blog-card-excerpt">How grounding scents transform your living space into a serene haven away from digital fatigue.</p>
+            <a href="/blogs/news" class="view-all-link" style="margin-top: auto; font-size: 0.85rem;">Read Story &rarr;</a>
+          </div>
+        </article>
+      {% endif %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div style="text-align: center; margin-top: 40px;">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Blog Journal",
+  "settings": []
+}
+{% endschema %}

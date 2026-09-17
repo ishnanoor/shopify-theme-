@@ -1,0 +1,91 @@
+<!-- Shop by Category Section -->
+<section class="site-wrapper" id="categories">
+  <div class="category-box-container">
+    <div class="section-head">
+      <h2>{{ section.settings.title | default: 'Shop by Category' }}</h2>
+      <a href="{{ section.settings.all_collections_url | default: routes.collections_url }}" class="view-all-link">
+        <span>{{ section.settings.link_text | default: 'Browse all' }}</span>
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="categories-flex">
+      <!-- Women -->
+      <a href="{{ routes.all_products_collection_url }}" class="category-item">
+        <div class="category-circle-wrap">
+          <img src="{{ 'cat-women.jpg' | asset_url }}" alt="Women Category">
+        </div>
+        <span class="category-name">Women</span>
+        <span class="category-count">120+ items</span>
+      </a>
+
+      <!-- Men -->
+      <a href="{{ routes.all_products_collection_url }}" class="category-item">
+        <div class="category-circle-wrap">
+          <img src="{{ 'cat-men.jpg' | asset_url }}" alt="Men Category">
+        </div>
+        <span class="category-name">Men</span>
+        <span class="category-count">98+ items</span>
+      </a>
+
+      <!-- Home & Living -->
+      <a href="{{ routes.all_products_collection_url }}" class="category-item">
+        <div class="category-circle-wrap">
+          <img src="{{ 'cat-home.jpg' | asset_url }}" alt="Home and Living Category">
+        </div>
+        <span class="category-name">Home & Living</span>
+        <span class="category-count">150+ items</span>
+      </a>
+
+      <!-- Beauty -->
+      <a href="{{ routes.all_products_collection_url }}" class="category-item">
+        <div class="category-circle-wrap">
+          <img src="{{ 'cat-beauty.jpg' | asset_url }}" alt="Beauty and Skincare Category">
+        </div>
+        <span class="category-name">Beauty</span>
+        <span class="category-count">80+ items</span>
+      </a>
+
+      <!-- Accessories -->
+      <a href="{{ routes.all_products_collection_url }}" class="category-item">
+        <div class="category-circle-wrap">
+          <img src="{{ 'cat-accessories.jpg' | asset_url }}" alt="Accessories and Fine Jewelry Category">
+        </div>
+        <span class="category-name">Accessories</span>
+        <span class="category-count">70+ items</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Browse all"
+    },
+    {
+      "type": "url",
+      "id": "all_collections_url",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Categories"
+    }
+  ]
+}
+{% endschema %}

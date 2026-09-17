@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "about": {
+      "type": "main-about",
+      "settings": {
+        "tag": "THE LUMORA PHILOSOPHY",
+        "title": "Curating a life of quiet beauty, conscious craft, and calm elegance.",
+        "lead": "We believe that what surrounds you shapes how you feel. Lumora was founded to replace fast-fashion noise with enduring materials, ethical craftsmanship, and effortless warmth."
+      }
+    }
+  },
+  "order": [
+    "about"
+  ]
+}
